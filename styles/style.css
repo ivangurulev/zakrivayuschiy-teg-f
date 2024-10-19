@@ -17,12 +17,12 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--basic-font), sans-serif;
-  font-variation-settings: 'wght' var(--text-font-weight);
-  /* background-color: var(--background-color); */
+  font-variation-settings: "wght" var(--text-font-weight);
+  background-color: var(--background-color);
   color: var(--accent-color);
   background-attachment: fixed;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-image: var(--background-gradient);
   background-size: cover;
   display: flex;
@@ -36,7 +36,7 @@
 
 .header {
   font-family: var(--accent-font), sans-serif;
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
@@ -47,7 +47,7 @@
   margin-block-end: 100px;
   max-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   min-height: max(323px, clamp(20.1875rem, 19.1972rem + 4.2254vw, 23rem));
-  max-height: 370px; 
+  max-height: 370px;
 }
 
 .header__logo {
@@ -61,12 +61,8 @@
   text-transform: uppercase;
 }
 
- /* заменить левый паддинг на clamp */
 .header__theme-menu {
   align-self: center;
-  /* padding-block-start: 3px;
-  padding-block-end: 25px;
-  padding-inline-start: 20px; */
   padding: 3px 0 25px 20px;
 }
 
@@ -117,15 +113,14 @@
 .card__title {
   font-size: 18px;
   line-height: 21.78px;
-  font-variation-settings: 'wght' var(--card-font-weight);
+  font-variation-settings: "wght" var(--card-font-weight);
   padding: 4px 10px 3px 10px;
   background-color: var(--background-color);
 }
 
-/*заменить высоту на max(371px, clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem)); */
 .card__image {
   max-width: 100%;
-  min-height: max(371px, clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem)); ;
+  min-height: max(371px, clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem));
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;
@@ -169,7 +164,7 @@
 }
 
 .button::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-color: var(--accent-color);
@@ -221,7 +216,6 @@
   border-color: var(--accent-color);
 }
 
-
 .card__image-container {
   position: relative;
 }
@@ -232,18 +226,14 @@
   position: absolute;
   top: 25px;
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
-  /* padding-block-start: 25px; */
   mix-blend-mode: hard-light;
-  text-shadow:
-    -1px 0 var(--text-stroke-color), 
-   0 1px var(--text-stroke-color), 
-   1px 0 var(--text-stroke-color), 
-   0 -1px var(--text-stroke-color);
-   opacity: 0.5;
-   z-index: 1;
+  text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
+  opacity: 0.5;
+  z-index: 1;
 }
 
-@supports(-webkit-text-stroke: 1px ) {
+@supports (-webkit-text-stroke: 1px) {
   .image-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--text-stroke-color);
@@ -269,16 +259,16 @@
 }
 
 .theme-menu__button::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px; /* Позиционирование под текстом */
-    height: 2px; /* Высота линии */
-    background-color: var(--border-color);
-    opacity: 0.5;
-    transform: scaleX(0);
-    transform-origin: left;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--border-color);
+  opacity: 0.5;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 .theme-menu__button:focus {
@@ -315,16 +305,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  /* min-width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem); */
   width: 310px;
-  /* min-height: clamp(5.25rem, 2.7993rem + 2.723vw, 3.4375rem); */
   height: 84px;
   margin-block-end: 100px;
   padding: 10px 20px 10px 20px;
 }
 
 .card-list li:last-child {
-  margin-block-end: clamp(3.125rem, 3.294rem + -0.1878vw, 3.25rem);;
+  margin-block-end: clamp(3.125rem, 3.294rem + -0.1878vw, 3.25rem);
 }
 
 .footer {
@@ -339,7 +327,6 @@
   align-self: flex-start;
 }
 
-/* попробовать задать абсолютное позиционирование для иконки в кнопке */
 .floppy {
   position: absolute;
   width: 28px;
@@ -372,7 +359,7 @@
     width: 337px;
     height: 53px;
   }
-  
+
   .floppy {
     width: 21px;
     height: 30px;
@@ -385,45 +372,45 @@
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent-color)
+  box-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.card__icon-button:hover .core{
+.card__icon-button:hover .core {
   transition: fill 0.3s linear;
   fill: var(--accent-color);
 }
 
-.card__icon-button:not(:hover) .core{
+.card__icon-button:not(:hover) .core {
   fill: transparent;
   transition: fill 0.3s linear 0.3s;
 }
 
-.card__icon-button:hover .main-body{
+.card__icon-button:hover .main-body {
   transition: fill 0.3s linear 0.5s;
   fill: var(--accent-color);
 }
 
-.card__icon-button:not(:hover) .main-body{
+.card__icon-button:not(:hover) .main-body {
   fill: transparent;
   transition: fill 0.3s linear;
 }
 
-.card__icon-button:active .core{
+.card__icon-button:active .core {
   transition: fill 0.3s linear;
   fill: var(--heart-fill-color);
 }
 
-.card__icon-button:active .main-body{
+.card__icon-button:active .main-body {
   transition: fill 0.3s linear 0.5s;
   fill: var(--heart-fill-color);
 }
 
-.like-icon.is-liked .core{
+.like-icon.is-liked .core {
   transition: fill 0.3s linear;
   fill: var(--heart-fill-color);
 }
 
-.like-icon.is-liked .main-body{
+.like-icon.is-liked .main-body {
   transition: fill 0.3s linear 0.5s;
   fill: var(--heart-fill-color);
 }
@@ -501,7 +488,7 @@ dialog {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:30px;
+  gap: 30px;
 }
 
 .dialog .button__text {
@@ -509,7 +496,7 @@ dialog {
   text-transform: uppercase;
   line-height: 21px;
   font-weight: 400;
-  }
+}
 
 .dialog__button .button__text {
   text-transform: uppercase;
@@ -531,7 +518,7 @@ dialog {
 }
 
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .sunset-image {

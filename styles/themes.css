@@ -29,8 +29,6 @@
     --heart-fill-color: #FF0000;
 }
 
-
-
 @media (prefers-color-scheme: dark) {
     :root  {
         --text-font-weight: 465;
