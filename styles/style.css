@@ -47,7 +47,6 @@
   margin-block-end: 100px;
   max-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   min-height: max(323px, clamp(20.1875rem, 19.1972rem + 4.2254vw, 23rem));
-  max-height: 370px;
 }
 
 .header__logo {
@@ -240,15 +239,6 @@
   }
 }
 
-@keyframes hover {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.6;
-  }
-}
-
 .theme-menu__button:hover {
   animation: hover 0.3s ease forwards;
 }
@@ -280,25 +270,6 @@
   animation: focus 0.3s ease forwards;
 }
 
-@keyframes focus {
-  to {
-    transform: scalex(1);
-  }
-}
-
-/*тут я не придумал, как можно сделать нужно анимацию, чтобы она бесконечно проигрывалась в обе стороны и при этом имела всего 2 кадра, как указано в теории, поэтому сделал так */
-@keyframes selected {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(4px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .save-button {
   position: relative;
   display: flex;
@@ -306,23 +277,18 @@
   align-items: center;
   justify-content: flex-end;
   width: 310px;
-  height: 84px;
+  /* height: 84px; */
   margin-block-end: 100px;
-  padding: 10px 20px 10px 20px;
+  padding: 38px 20px 10px 20px;
 }
 
 .card-list li:last-child {
   margin-block-end: clamp(3.125rem, 3.294rem + -0.1878vw, 3.25rem);
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .save-button .button__text {
   padding: 0;
+  padding-block-start: 14px;
   padding-block-end: 5px;
   align-self: flex-start;
 }
@@ -342,22 +308,15 @@
 
 @media (768px <= width) {
   .save-button {
-    height: 55px;
     flex-direction: row;
     justify-content: flex-end;
     width: 337px;
-    padding: 0;
+    padding: 20px 20px;
   }
 
   .save-button .button__text {
     padding: 0;
-    padding-inline-end: 21px;
     align-self: center;
-  }
-
-  .save-button::before {
-    width: 337px;
-    height: 53px;
   }
 
   .floppy {
@@ -373,89 +332,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
-}
-
-.card__icon-button:hover .core {
-  transition: fill 0.3s linear;
-  fill: var(--accent-color);
-}
-
-.card__icon-button:not(:hover) .core {
-  fill: transparent;
-  transition: fill 0.3s linear 0.3s;
-}
-
-.card__icon-button:hover .main-body {
-  transition: fill 0.3s linear 0.5s;
-  fill: var(--accent-color);
-}
-
-.card__icon-button:not(:hover) .main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.card__icon-button:active .core {
-  transition: fill 0.3s linear;
-  fill: var(--heart-fill-color);
-}
-
-.card__icon-button:active .main-body {
-  transition: fill 0.3s linear 0.5s;
-  fill: var(--heart-fill-color);
-}
-
-.like-icon.is-liked .core {
-  transition: fill 0.3s linear;
-  fill: var(--heart-fill-color);
-}
-
-.like-icon.is-liked .main-body {
-  transition: fill 0.3s linear 0.5s;
-  fill: var(--heart-fill-color);
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s linear 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  transform-origin: center;
-  animation: heart-like 0.3s ease-in 0.1s;
-}
-
-.like-icon.is-liked .sparks {
-  animation: heart-sparks 0.3s ease-in 0.3s;
-}
-
-.like-icon:not(.is-liked) .contour {
-  fill: var(--accent-color);
-  transition: fill 0.1s linear;
-}
-
-@keyframes heart-like {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes heart-sparks {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.sparks {
-  opacity: 0;
 }
 
 .dialog .floppy {
@@ -477,7 +353,7 @@
   transform: scaleX(1);
 }
 
-dialog {
+.dialog {
   width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   height: 191px;
   padding: 30px clamp(1.75rem, 2.9331rem + -1.3146vw, 2.625rem);
@@ -518,7 +394,7 @@ dialog {
 }
 
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .sunset-image {

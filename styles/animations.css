@@ -12,3 +12,115 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes hover {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes focus {
+  to {
+    transform: scalex(1);
+  }
+}
+
+/*тут я не придумал, как можно сделать нужно анимацию, чтобы она бесконечно проигрывалась в обе стороны и при этом имела всего 2 кадра, как указано в теории, поэтому сделал так */
+@keyframes selected {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes heart-like {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heart-sparks {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.card__icon-button:hover .core {
+  transition: fill 0.3s linear;
+  fill: var(--accent-color);
+}
+
+.card__icon-button:not(:hover) .core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.3s;
+}
+
+.card__icon-button:hover .main-body {
+  transition: fill 0.3s linear 0.5s;
+  fill: var(--accent-color);
+}
+
+.card__icon-button:not(:hover) .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .core {
+  transition: fill 0.3s linear;
+  fill: var(--heart-fill-color);
+}
+
+.card__icon-button:active .main-body {
+  transition: fill 0.3s linear 0.5s;
+  fill: var(--heart-fill-color);
+}
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s linear;
+  fill: var(--heart-fill-color);
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s linear 0.5s;
+  fill: var(--heart-fill-color);
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart-like 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: heart-sparks 0.3s ease-in 0.3s;
+}
+
+.like-icon:not(.is-liked) .contour {
+  fill: var(--accent-color);
+  transition: fill 0.1s linear;
+}
+
+.sparks {
+  opacity: 0;
+}

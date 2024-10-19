@@ -42,17 +42,3 @@
         --heart-fill-color: #FF0000;
     }
   } 
-
-  @media (prefers-color-scheme: light) {
-    :root {
-        --text-font-weight: 400;
-        --card-font-weight: 700;
-        --background-gradient: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgba(255, 255, 255, 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgba(255, 255, 255, 0) 2px 4px),  linear-gradient(180deg,#e7e7e7 0.01%, #1a1a1a 100%);
-        --accent-color: #000000;
-        --background-color: #FFFFFF;
-        --border-color: #000;
-        --text-stroke-color: #fff;
-        --mix-blend-color: #fff;
-        --heart-fill-color: #FF0000;
-    }
-  } 
